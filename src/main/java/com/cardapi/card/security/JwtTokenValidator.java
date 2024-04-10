@@ -25,7 +25,7 @@ import static java.util.Objects.isNull;
 public class JwtTokenValidator {
     private final JwkProvider jwkProvider;
 
-    public AccessToken validateAuthorizationHeader(String authorizationHeader) throws InvalidTokenException {
+    public AccessToken validateAuthorizationHeader(String authorizationHeader) {
         String tokenValue = subStringBearer(authorizationHeader);
         validateToken(tokenValue);
         return new AccessToken(tokenValue);
